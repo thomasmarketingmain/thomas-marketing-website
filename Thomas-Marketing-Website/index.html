@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -55,6 +55,7 @@
       --nav-height: 80px;
 
       --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-heading: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -80,7 +81,7 @@
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
     ::selection { background: var(--gold); color: var(--white); }
 
-    h1, h2, h3, h4 { margin: 0 0 0.5em; line-height: 1.15; color: var(--text-dark); letter-spacing: -0.02em; }
+    h1, h2, h3, h4 { margin: 0 0 0.5em; line-height: 1.15; color: var(--text-dark); letter-spacing: -0.02em; font-family: var(--font-heading); }
     h1 { font-weight: 800; }
     h2, h3, h4 { font-weight: 700; }
     p { margin: 0 0 1em; }
@@ -130,10 +131,11 @@
     }
     .section-head-center .section-label::before { display: none; }
     .section-head-center .section-label {
-      padding: 6px 16px;
-      background: var(--gold-soft);
-      border-radius: 50px;
-      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 0 0 8px;
+      background: none;
+      border-radius: 0;
+      border: none;
+      border-bottom: 2px solid var(--gold);
     }
     .section-heading {
       font-size: 44px;
@@ -433,39 +435,32 @@
       position: relative;
       z-index: 1;
     }
-    .hero-eyebrow {
+    .hero-label {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 6px 14px 6px 8px;
-      background: rgba(201, 168, 76, 0.1);
-      border: 1px solid rgba(201, 168, 76, 0.3);
-      border-radius: 50px;
       color: var(--gold);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 24px;
     }
-    .hero-eyebrow .dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
+    .hero-label::before,
+    .hero-label::after {
+      content: "";
+      width: 40px;
+      height: 1px;
       background: var(--gold);
-      color: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
     }
     .hero h1 {
-      font-size: 60px;
+      font-family: 'Manrope', var(--font-heading);
+      font-size: 58px;
       font-weight: 800;
       color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 24px;
-      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0;
+      letter-spacing: -0.02em;
     }
     .hero h1 .grad {
       background: linear-gradient(135deg, var(--gold-bright), var(--gold));
@@ -474,17 +469,24 @@
       -webkit-text-fill-color: transparent;
     }
     .hero-sub {
-      font-size: 19px;
-      color: rgba(255, 255, 255, 0.78);
-      max-width: 560px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 520px;
+      margin-top: 20px;
       margin-bottom: 36px;
-      line-height: 1.65;
+      line-height: 1.7;
     }
     .hero-buttons {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      align-items: stretch;
       margin-bottom: 40px;
+    }
+    .hero-buttons .btn { min-height: 52px; }
+    .hero-buttons .btn-gold {
+      padding: 16px 32px;
+      font-weight: 600;
     }
     .hero-trust {
       display: flex;
@@ -612,8 +614,36 @@
       animation: bob 4s ease-in-out infinite;
     }
     .float-stat.top {
-      top: 20px;
+      top: -24px;
       left: -30px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      opacity: 0;
+      animation: fadeInFloat 0.8s ease forwards 0.4s,
+                 bob 4s ease-in-out infinite 1.2s;
+    }
+    .float-stat.top .ico {
+      width: auto;
+      height: auto;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
+      font-size: 20px;
+    }
+    .float-stat.top .v {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--navy);
+      letter-spacing: 0;
+      white-space: nowrap;
+      margin-bottom: 2px;
+    }
+    .float-stat.top .l {
+      font-size: 12px;
+      color: #6B7280;
     }
     .float-stat.bottom {
       bottom: 30px;
@@ -623,6 +653,15 @@
     @keyframes bob {
       0%, 100% { transform: translateY(0); }
       50%      { transform: translateY(-8px); }
+    }
+    @keyframes fadeInFloat {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0px); }
+    }
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
     }
     .float-stat .ico {
       width: 38px;
@@ -637,6 +676,14 @@
     }
     .float-stat .v { font-weight: 800; color: var(--navy); font-size: 16px; line-height: 1; margin-bottom: 2px; }
     .float-stat .l { font-size: 12px; color: var(--text-muted); }
+    .float-stat.text-only { padding: 14px 22px; }
+    .float-stat.text-only .v {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.005em;
+      white-space: nowrap;
+    }
 
     /* =========================================================
        Stats bar
@@ -1088,8 +1135,9 @@
     .why .container { position: relative; z-index: 1; }
     .why .section-heading { color: var(--white); }
     .why .section-head-center .section-label {
-      background: rgba(201, 168, 76, 0.12);
-      border-color: rgba(201, 168, 76, 0.3);
+      background: none;
+      border: none;
+      border-bottom: 2px solid var(--gold);
     }
     .why-grid {
       display: grid;
@@ -1654,11 +1702,13 @@
 
       .hero { padding: calc(var(--nav-height) + 40px) 0 80px; text-align: center; }
       .hero-inner { grid-template-columns: 1fr; gap: 60px; }
-      .hero h1 { font-size: 38px; }
-      .hero-sub { font-size: 17px; margin-left: auto; margin-right: auto; }
-      .hero-eyebrow { font-size: 11px; }
-      .hero-buttons { justify-content: center; flex-direction: column; }
+      .hero h1 { font-size: 36px; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-label { font-size: 11px; }
+      .hero-buttons { justify-content: center; flex-direction: column; gap: 12px; }
       .hero-buttons .btn { width: 100%; }
+      .hero-buttons .btn-gold { padding-top: 18px; padding-bottom: 18px; }
+      .hero-mockup { display: none; }
       .hero-trust { justify-content: center; font-size: 13.5px; gap: 14px 22px; }
       .mockup { margin: 0 auto; max-width: 100%; transform: none; }
       .float-stat.top { top: -10px; left: 10px; }
@@ -1762,12 +1812,9 @@
 
       <div class="container hero-inner">
         <div class="hero-content">
-          <span class="hero-eyebrow">
-            <span class="dot"><i class="fa-solid fa-bolt"></i></span>
-            Digital Marketing for Service Businesses
-          </span>
-          <h1>Your Customers Are Searching Online. <span class="grad">Make Sure They Find You.</span></h1>
-          <p class="hero-sub">Thomas Marketing builds modern websites, manages your online presence, and drives real leads for service businesses across the US — so you can focus on the work you actually do.</p>
+          <span class="hero-label">Digital Marketing for Service Businesses</span>
+          <h1>Customers Are Searching For You Online.<br /><span class="grad">Can They Find You?</span></h1>
+          <p class="hero-sub">We build professional websites, manage your online presence, and drive real leads for service businesses across the US. Lean, modern, and built for results.</p>
 
           <div class="hero-buttons">
             <a href="#audit-form" class="btn btn-gold">Get Your Free Website Audit <i class="fa-solid fa-arrow-right"></i></a>
@@ -1785,8 +1832,8 @@
           <div class="float-stat top">
             <div class="ico"><i class="fa-solid fa-arrow-trend-up"></i></div>
             <div>
-              <div class="v">+312% Leads</div>
-              <div class="l">avg. first 90 days</div>
+              <div class="v">5-Day Delivery</div>
+              <div class="l">avg. website turnaround</div>
             </div>
           </div>
           <div class="float-stat bottom">
@@ -1996,6 +2043,7 @@
               <li><i class="fa-solid fa-check"></i>Google Maps integration</li>
               <li><i class="fa-solid fa-check"></i>Live in 5 business days</li>
               <li><i class="fa-solid fa-check"></i>30 days free hosting included</li>
+              <li><i class="fa-solid fa-check"></i>Tech-enabled delivery — live in 5 days</li>
             </ul>
             <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-full">Get Started</a>
           </div>
@@ -2013,6 +2061,7 @@
               <li><i class="fa-solid fa-check"></i>Domain management handled</li>
               <li><i class="fa-solid fa-check"></i>Priority support</li>
               <li><i class="fa-solid fa-check"></i>Monthly performance summary</li>
+              <li><i class="fa-solid fa-check"></i>Modern tools, traditional service</li>
             </ul>
             <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-full">Get Started <i class="fa-solid fa-arrow-right"></i></a>
           </div>
@@ -2029,6 +2078,7 @@
               <li><i class="fa-solid fa-check"></i>SEO optimization</li>
               <li><i class="fa-solid fa-check"></i>Monthly analytics report</li>
               <li><i class="fa-solid fa-check"></i>Quarterly strategy call</li>
+              <li><i class="fa-solid fa-check"></i>Powered by the latest marketing technology</li>
             </ul>
             <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-full">Get Started</a>
           </div>
@@ -2045,6 +2095,7 @@
               <li><i class="fa-solid fa-check"></i>Weekly performance reports</li>
               <li><i class="fa-solid fa-check"></i>Dedicated account manager</li>
               <li><i class="fa-solid fa-check"></i>Priority turnaround on all work</li>
+              <li><i class="fa-solid fa-check"></i>Cutting-edge tools. Dedicated personal service.</li>
             </ul>
             <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-full">Get Started</a>
           </div>
@@ -2089,10 +2140,10 @@
             </div>
           </div>
           <div class="why-box reveal" data-stagger="3">
-            <div class="big-num">Nationwide</div>
+            <div class="big-num">Built Lean.</div>
             <div>
-              <h3>Serving the Entire US</h3>
-              <p>We work with service businesses across the entire United States, fully remote and always available.</p>
+              <h3>Built Modern.</h3>
+              <p>We leverage the latest tools and technology to deliver faster results at a fraction of what traditional agencies charge — without cutting corners on quality.</p>
             </div>
           </div>
         </div>
@@ -2106,8 +2157,8 @@
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
           </div>
-          <blockquote>"Working with Thomas Marketing was the best decision we made for our business. Our phone started ringing within weeks of the new website going live."</blockquote>
-          <p class="attr">— Lauren, Owner of LTC Engineering</p>
+          <blockquote>"They built me a professional website in under a week. I already had some clients mention they found me online."</blockquote>
+          <p class="attr">Lauren — Owner of LTC Engineering</p>
         </div>
       </div>
     </section>
@@ -2279,7 +2330,7 @@
         <div class="footer-col">
           <img onerror="this.onerror=null;this.src=window.LOGO_FALLBACK" src="logo.png?v=2" alt="Thomas Marketing" />
           <p class="footer-tagline">More Customers. Better First Impressions. Zero Tech Headaches.</p>
-          <p>Helping service businesses across the US get found online and grow with confidence.</p>
+          <p>A lean, modern marketing agency helping service businesses across the US get found online — faster, smarter, and for less than you'd expect.</p>
         </div>
 
         <div class="footer-col">
@@ -2309,15 +2360,13 @@
           </div>
           <p class="footer-serve">Proudly serving businesses across the United States</p>
           <div class="footer-socials">
-            <a href="#" aria-label="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/company/thomas-marketing-co" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>
 
       <div class="footer-divider"></div>
-      <p class="copyright">&copy; 2025 Thomas Marketing. All rights reserved. | thomasmarketing.co</p>
+      <p class="copyright">&copy; 2026 Thomas Marketing. All rights reserved. | thomasmarketing.co</p>
     </div>
   </footer>
 
