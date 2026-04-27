@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thomas Marketing helps local service businesses across the US get found online with professional websites, SEO, social media, and ads. Get your free website audit today." />
+  <meta name="description" content="Thomas Marketing helps local service businesses across the US get found online with professional websites, hosting, and Google presence. Get your free website preview today." />
   <title>Thomas Marketing | Digital Marketing for Service Businesses</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
@@ -481,12 +481,18 @@
       gap: 14px;
       flex-wrap: wrap;
       align-items: stretch;
-      margin-bottom: 40px;
+      margin-bottom: 14px;
     }
     .hero-buttons .btn { min-height: 52px; }
     .hero-buttons .btn-gold {
       padding: 16px 32px;
       font-weight: 600;
+    }
+    .hero-cta-note {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 28px;
+      letter-spacing: 0.01em;
     }
     .hero-trust {
       display: flex;
@@ -961,6 +967,10 @@
       margin: 0;
       font-size: 15px;
     }
+    .how-cta {
+      text-align: center;
+      margin-top: 56px;
+    }
 
     /* =========================================================
        Pricing
@@ -968,7 +978,7 @@
     .pricing { background: var(--white); }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       align-items: stretch;
     }
@@ -1070,6 +1080,55 @@
     }
     .price-card.featured li { color: rgba(255,255,255,0.9); }
     .price-card.featured li i { background: rgba(201, 168, 76, 0.2); }
+
+    .price-card.best-value {
+      background: linear-gradient(160deg, var(--gold), var(--gold-bright));
+      color: var(--white);
+      border-color: transparent;
+      box-shadow: 0 24px 48px rgba(201, 168, 76, 0.3);
+    }
+    .price-card.best-value:hover { transform: translateY(-10px); box-shadow: 0 28px 56px rgba(201, 168, 76, 0.4); }
+    .price-card.best-value .price-icon { background: rgba(255, 255, 255, 0.25); color: var(--white); }
+    .price-card.best-value .plan-name,
+    .price-card.best-value .plan-price { color: var(--white); }
+    .price-card.best-value .plan-price .per { color: rgba(255, 255, 255, 0.85); }
+    .price-card.best-value .plan-sub {
+      color: rgba(255, 255, 255, 0.9);
+      border-bottom-color: rgba(255, 255, 255, 0.25);
+    }
+    .price-card.best-value li { color: rgba(255, 255, 255, 0.95); }
+    .price-card.best-value li i { background: rgba(255, 255, 255, 0.25); color: var(--white); }
+    .price-card.best-value .btn-outline-navy {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .price-card.best-value .btn-outline-navy:hover {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+    .badge-best-value {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 14px rgba(27, 43, 75, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .badge-best-value i { font-size: 10px; color: var(--gold); }
+
     .badge-popular {
       position: absolute;
       top: -12px;
@@ -1323,6 +1382,22 @@
       gap: 28px;
       align-items: stretch;
     }
+    .contact-grid.contact-grid-single {
+      grid-template-columns: minmax(0, 640px);
+      justify-content: center;
+    }
+    .form-direct {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .form-direct a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .form-direct a:hover { text-decoration: underline; }
     .book-card {
       background: linear-gradient(160deg, var(--navy), var(--navy-light));
       color: var(--white);
@@ -1685,9 +1760,11 @@
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .how-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; }
       .how-grid::before { display: none; }
-      .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 28px 18px; }
       .price-card.featured { transform: none; }
       .price-card.featured:hover { transform: translateY(-6px); }
+      .price-card.best-value { transform: none; }
+      .price-card.best-value:hover { transform: translateY(-6px); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 28px; }
       .stat-item:nth-child(2) { border-right: none; }
@@ -1730,8 +1807,9 @@
       .how-grid::before { display: none; }
 
       .pricing-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; }
-      .price-card { order: 2; }
+      .price-card { order: 3; }
       .price-card.featured { order: 1; }
+      .price-card.best-value { order: 2; }
 
       .why-box { flex-direction: column; gap: 12px; padding: 28px; }
       .why-box .big-num { min-width: 0; font-size: 38px; }
@@ -1783,7 +1861,7 @@
         </ul>
       </nav>
 
-      <a href="#audit-form" class="btn btn-gold nav-cta">Get Your Free Audit <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#contact" class="btn btn-gold nav-cta">Get Your Free Website Preview <i class="fa-solid fa-arrow-right"></i></a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -1798,7 +1876,7 @@
         <li><a href="#faq" data-nav="faq">FAQ</a></li>
         <li><a href="#contact" data-nav="contact">Contact</a></li>
         <li class="cta-li">
-          <a href="#audit-form" class="btn btn-gold">Get Your Free Website Audit <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-gold">Get Your Free Website Preview <i class="fa-solid fa-arrow-right"></i></a>
         </li>
       </ul>
     </div>
@@ -1813,16 +1891,17 @@
       <div class="container hero-inner">
         <div class="hero-content">
           <span class="hero-label">Digital Marketing for Service Businesses</span>
-          <h1>Customers Are Searching For You Online.<br /><span class="grad">Can They Find You?</span></h1>
-          <p class="hero-sub">We build professional websites, manage your online presence, and drive real leads for service businesses across the US. Lean, modern, and built for results.</p>
+          <h1>Your Customers Are Searching.<br /><span class="grad">Can They Find You?</span></h1>
+          <p class="hero-sub">We build professional websites and manage your entire online presence so the right people find your business first — not your competitor's.</p>
 
           <div class="hero-buttons">
-            <a href="#audit-form" class="btn btn-gold">Get Your Free Website Audit <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#how" class="btn btn-outline-white">See How It Works</a>
+            <a href="#contact" class="btn btn-gold">Get Your Free Website Preview <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
+          <p class="hero-cta-note">Takes 30 seconds. No cost, no commitment, no pressure.</p>
+
           <div class="hero-trust">
-            <span><i class="fa-solid fa-check"></i> Free audit, no commitment</span>
+            <span><i class="fa-solid fa-check"></i> Free preview, no commitment</span>
             <span><i class="fa-solid fa-check"></i> 5-day website delivery</span>
             <span><i class="fa-solid fa-check"></i> Serving businesses across the US</span>
           </div>
@@ -1839,8 +1918,8 @@
           <div class="float-stat bottom">
             <div class="ico"><i class="fa-solid fa-star"></i></div>
             <div>
-              <div class="v">4.9 / 5.0</div>
-              <div class="l">client satisfaction</div>
+              <div class="v">Mobile Optimized</div>
+              <div class="l">every device, every screen</div>
             </div>
           </div>
           <div class="mockup">
@@ -1898,7 +1977,7 @@
           </div>
           <div class="stat-item reveal" data-stagger="2">
             <div class="num" data-count="24" data-suffix="hr">24hr</div>
-            <div class="lbl">Audit turnaround</div>
+            <div class="lbl">Preview turnaround</div>
           </div>
           <div class="stat-item reveal" data-stagger="3">
             <div class="num"><span class="gold">50</span> States</div>
@@ -1949,40 +2028,25 @@
       <div class="container">
         <div class="section-head-center reveal">
           <span class="section-label">What We Do</span>
-          <h2 class="section-heading">Everything Your Business Needs to Grow Online — <span class="accent">In One Place</span></h2>
-          <p class="section-subheading">Start with a website. Add services as you grow. No long contracts. No confusing packages.</p>
+          <h2 class="section-heading">More Customers. <span class="accent">Less Effort.</span></h2>
+          <p class="section-subheading">We handle everything it takes to get your business found online and turn that traffic into real leads.</p>
         </div>
 
         <div class="services-grid">
           <div class="service-card reveal" data-stagger="0">
             <div class="svc-icon"><i class="fa-solid fa-laptop-code"></i></div>
             <h3>Website Design &amp; Development</h3>
-            <p>We build fast, modern, mobile-friendly websites that make your business look established and turn visitors into paying customers. Delivered in 5 business days.</p>
+            <p>A fast, modern website that makes your business look established and turns visitors into paying customers. Most clients see more inbound calls within the first 30 days.</p>
           </div>
           <div class="service-card reveal" data-stagger="1">
-            <div class="svc-icon"><i class="fa-solid fa-calendar-check"></i></div>
-            <h3>Social Media Management</h3>
-            <p>We create and schedule content consistently across your Facebook and Instagram so you stay visible and relevant without lifting a finger.</p>
+            <div class="svc-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Monthly Maintenance &amp; Hosting</h3>
+            <p>Your website works for you 24/7 — we make sure it stays fast, secure, and up to date so you never lose a customer to a broken page or slow load time.</p>
           </div>
           <div class="service-card reveal" data-stagger="2">
-            <div class="svc-icon"><i class="fa-solid fa-chart-line"></i></div>
-            <h3>Google &amp; Meta Ads</h3>
-            <p>We run targeted ad campaigns that put your business in front of people actively searching for your services — and we track every dollar spent.</p>
-          </div>
-          <div class="service-card reveal" data-stagger="3">
-            <div class="svc-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-            <h3>Monthly Maintenance</h3>
-            <p>We keep your website updated, secure, and running smoothly every month. Hosting, updates, and small changes — all handled for you.</p>
-          </div>
-          <div class="service-card reveal" data-stagger="4">
-            <div class="svc-icon"><i class="fa-solid fa-paintbrush"></i></div>
-            <h3>Graphic Design</h3>
-            <p>From logos to social graphics to flyers, we create visuals that make your brand look sharp, consistent, and professional across every platform.</p>
-          </div>
-          <div class="service-card reveal" data-stagger="5">
-            <div class="svc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-            <h3>Search Engine Optimization</h3>
-            <p>We optimize your website so Google ranks it higher over time, bringing you a steady stream of organic traffic and leads without paying for every click.</p>
+            <div class="svc-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+            <h3>Google Presence &amp; Local SEO</h3>
+            <p>When someone in your area searches for your service, we make sure your business shows up first. More visibility means more calls, more leads, and more jobs booked.</p>
           </div>
         </div>
       </div>
@@ -1993,29 +2057,29 @@
       <div class="container">
         <div class="section-head-center reveal">
           <span class="section-label">The Process</span>
-          <h2 class="section-heading">Getting Started Is <span class="accent">Easier Than You Think</span></h2>
+          <h2 class="section-heading">How We Get You <span class="accent">More Customers</span></h2>
         </div>
 
         <div class="how-grid">
           <div class="how-step reveal" data-stagger="0">
             <div class="how-badge">01</div>
-            <h3>Request Your Free Audit</h3>
-            <p>Fill out our quick form and we'll analyze your current website, Google listing, and competitors — completely free, no strings attached.</p>
+            <h3>You tell us about your business</h3>
+            <p>Fill out a quick form with your business name, industry, and contact info. That's it.</p>
           </div>
           <div class="how-step reveal" data-stagger="1">
             <div class="how-badge">02</div>
-            <h3>We Walk You Through It</h3>
-            <p>We jump on a quick call to walk you through exactly what we found and what we recommend. No pressure, no jargon, just honest advice.</p>
+            <h3>We build your free preview</h3>
+            <p>We build a real website preview for your business before we even get on a call.</p>
           </div>
           <div class="how-step reveal" data-stagger="2">
             <div class="how-badge">03</div>
-            <h3>We Get to Work</h3>
-            <p>Once you're ready, we build your website and set up your services. Most websites are live within 5 business days.</p>
+            <h3>We walk you through it together</h3>
+            <p>We hop on a quick 20-minute call, show you the preview, and answer any questions.</p>
           </div>
           <div class="how-step reveal" data-stagger="3">
             <div class="how-badge">04</div>
-            <h3>You Start Getting Leads</h3>
-            <p>We manage everything ongoing so you can focus on running your business while the leads come to you.</p>
+            <h3>We build, launch, and handle everything after</h3>
+            <p>Your site goes live in 5 days. We handle everything after — hosting, updates, and growth.</p>
           </div>
         </div>
       </div>
@@ -2026,8 +2090,8 @@
       <div class="container">
         <div class="section-head-center reveal">
           <span class="section-label">Simple Pricing</span>
-          <h2 class="section-heading">Transparent Pricing. <span class="accent">No Surprises.</span></h2>
-          <p class="section-subheading">Start with what you need. Add more as you grow.</p>
+          <h2 class="section-heading">Invest in Growth. <span class="accent">Not Just a Website.</span></h2>
+          <p class="section-subheading">Simple plans built to turn your online presence into a steady stream of leads and new customers.</p>
         </div>
 
         <div class="pricing-grid">
@@ -2039,13 +2103,11 @@
             <ul>
               <li><i class="fa-solid fa-check"></i>5-page professional website</li>
               <li><i class="fa-solid fa-check"></i>Mobile optimized</li>
-              <li><i class="fa-solid fa-check"></i>Contact form included</li>
-              <li><i class="fa-solid fa-check"></i>Google Maps integration</li>
+              <li><i class="fa-solid fa-check"></i>Contact form + Google Maps integration</li>
               <li><i class="fa-solid fa-check"></i>Live in 5 business days</li>
               <li><i class="fa-solid fa-check"></i>30 days free hosting included</li>
-              <li><i class="fa-solid fa-check"></i>Tech-enabled delivery — live in 5 days</li>
             </ul>
-            <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-full">Get Started</a>
+            <a href="#contact" class="btn btn-outline-navy btn-full">Get Started</a>
           </div>
 
           <div class="price-card featured reveal" data-stagger="1">
@@ -2057,47 +2119,29 @@
             <ul>
               <li><i class="fa-solid fa-check"></i>Everything in Starter</li>
               <li><i class="fa-solid fa-check"></i>Monthly hosting &amp; security</li>
-              <li><i class="fa-solid fa-check"></i>Up to 2 hours changes/month</li>
               <li><i class="fa-solid fa-check"></i>Domain management handled</li>
-              <li><i class="fa-solid fa-check"></i>Priority support</li>
+              <li><i class="fa-solid fa-check"></i>Up to 2 hours of changes/month</li>
               <li><i class="fa-solid fa-check"></i>Monthly performance summary</li>
-              <li><i class="fa-solid fa-check"></i>Modern tools, traditional service</li>
+              <li><i class="fa-solid fa-check"></i>Priority support</li>
             </ul>
-            <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-full">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contact" class="btn btn-gold btn-full">Get Started <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <div class="price-card reveal" data-stagger="2">
-            <div class="price-icon"><i class="fa-solid fa-chart-simple"></i></div>
-            <div class="plan-name">Growth Package</div>
-            <div class="plan-price">$997<span class="per">/mo</span></div>
-            <div class="plan-sub">Recurring monthly</div>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>Website + Maintenance included</li>
-              <li><i class="fa-solid fa-check"></i>Social media management</li>
-              <li><i class="fa-solid fa-check"></i>12 posts per month</li>
-              <li><i class="fa-solid fa-check"></i>SEO optimization</li>
-              <li><i class="fa-solid fa-check"></i>Monthly analytics report</li>
-              <li><i class="fa-solid fa-check"></i>Quarterly strategy call</li>
-              <li><i class="fa-solid fa-check"></i>Powered by the latest marketing technology</li>
-            </ul>
-            <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-full">Get Started</a>
-          </div>
-
-          <div class="price-card reveal" data-stagger="3">
+          <div class="price-card best-value reveal" data-stagger="2">
+            <span class="badge-best-value"><i class="fa-solid fa-gem"></i> Best Value</span>
             <div class="price-icon"><i class="fa-solid fa-gem"></i></div>
-            <div class="plan-name">Full Service</div>
-            <div class="plan-price">$2,500<span class="per">/mo</span></div>
-            <div class="plan-sub">Recurring monthly</div>
+            <div class="plan-name">Full Presence Package</div>
+            <div class="plan-price">$597 <span class="per">+ $497/mo</span></div>
+            <div class="plan-sub">Everything you need to grow</div>
             <ul>
-              <li><i class="fa-solid fa-check"></i>Everything in Growth</li>
-              <li><i class="fa-solid fa-check"></i>Google &amp; Meta ad management</li>
-              <li><i class="fa-solid fa-check"></i>Ad creative and copywriting</li>
-              <li><i class="fa-solid fa-check"></i>Weekly performance reports</li>
-              <li><i class="fa-solid fa-check"></i>Dedicated account manager</li>
-              <li><i class="fa-solid fa-check"></i>Priority turnaround on all work</li>
-              <li><i class="fa-solid fa-check"></i>Cutting-edge tools. Dedicated personal service.</li>
+              <li><i class="fa-solid fa-check"></i>Everything in Website + Maintenance</li>
+              <li><i class="fa-solid fa-check"></i>Google Business Profile setup &amp; optimization</li>
+              <li><i class="fa-solid fa-check"></i>Active review generation strategy</li>
+              <li><i class="fa-solid fa-check"></i>Local SEO optimization</li>
+              <li><i class="fa-solid fa-check"></i>Monthly Google ranking report</li>
+              <li><i class="fa-solid fa-check"></i>Quarterly strategy call</li>
             </ul>
-            <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-full">Get Started</a>
+            <a href="#contact" class="btn btn-outline-navy btn-full">Get Started</a>
           </div>
         </div>
 
@@ -2126,17 +2170,17 @@
             </div>
           </div>
           <div class="why-box reveal" data-stagger="1">
-            <div class="big-num">All-In-One</div>
+            <div class="big-num">Built for You</div>
             <div>
-              <h3>One Point of Contact</h3>
-              <p>Every digital service your business needs under one roof. One point of contact, zero runaround.</p>
+              <h3>Small Business First</h3>
+              <p>Built specifically for local service businesses that want more customers without the big agency price tag.</p>
             </div>
           </div>
           <div class="why-box reveal" data-stagger="2">
-            <div class="big-num">No Contracts</div>
+            <div class="big-num">Month-to-Month</div>
             <div>
-              <h3>Month-to-Month Freedom</h3>
-              <p>All recurring services are month-to-month. Stay because it works, not because you have to.</p>
+              <h3>Your Terms.</h3>
+              <p>Stay because it's working, not because you're locked in. Cancel anytime with 30 days notice.</p>
             </div>
           </div>
           <div class="why-box reveal" data-stagger="3">
@@ -2175,56 +2219,65 @@
         <div class="faq-list">
           <div class="faq-item reveal">
             <button class="faq-q" aria-expanded="false">
-              <span>How long does it actually take to build my website?</span>
+              <span>What is the free website preview?</span>
               <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
             <div class="faq-a">
-              <div class="faq-a-inner">Most websites go live within 5 business days of kickoff. After you fill out a quick questionnaire and share your content and photos, we handle everything — design, development, testing, and launch. You'll get to review before anything goes live.</div>
+              <div class="faq-a-inner">Before we even get on a call, we build a real working website preview for your business. You get to see exactly what your online presence could look like — and how it would help more customers find you — before spending a single dollar.</div>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-q" aria-expanded="false">
-              <span>Do I need to sign a long-term contract?</span>
+              <span>How long does it take to build my website?</span>
               <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
             <div class="faq-a">
-              <div class="faq-a-inner">No. All of our recurring services are month-to-month. You can cancel anytime with 30 days notice. We earn your business every month by delivering real results — not by locking you into a contract.</div>
+              <div class="faq-a-inner">Most websites are live within 5 business days of our kickoff call.</div>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-q" aria-expanded="false">
-              <span>What if I already have a website?</span>
+              <span>Can I cancel my monthly plan?</span>
               <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
             <div class="faq-a">
-              <div class="faq-a-inner">Great — we'll audit it for free. We'll tell you honestly whether it needs a full rebuild, some updates, or is already in good shape. Either way, we can take over hosting, maintenance, and marketing without replacing what's working.</div>
+              <div class="faq-a-inner">Yes — just give us 30 days written notice. We'll transfer your domain and site files to you cleanly.</div>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-q" aria-expanded="false">
-              <span>Do you work with businesses outside of Arizona?</span>
+              <span>Do you work with businesses outside Arizona?</span>
               <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
             <div class="faq-a">
-              <div class="faq-a-inner">Yes — we work with service businesses across the entire United States. Everything we do is fully remote, from kickoff calls to ongoing support. Our clients span every time zone and we're always reachable when you need us.</div>
+              <div class="faq-a-inner">Yes — we work with small businesses across the US. Everything is handled remotely.</div>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-q" aria-expanded="false">
-              <span>What industries do you specialize in?</span>
+              <span>I'm not tech-savvy at all. Will this be complicated for me?</span>
               <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
             <div class="faq-a">
-              <div class="faq-a-inner">We focus on local service businesses — plumbers, electricians, HVAC, roofers, landscapers, contractors, salons, med spas, detailers, and similar. If your business depends on local customers finding you online, we're the right fit.</div>
+              <div class="faq-a-inner">Not at all. You don't touch anything. We handle every technical detail from start to finish — you just tell us about your business and we take it from there.</div>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-q" aria-expanded="false">
-              <span>What happens after I request a free audit?</span>
+              <span>What if I want to upgrade my plan later?</span>
               <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
             <div class="faq-a">
-              <div class="faq-a-inner">Within 24 hours we'll analyze your current website, Google Business listing, and top competitors, then send you a detailed breakdown. We'll also offer a free 30-minute call to walk through it together. No sales pitch, no pressure.</div>
+              <div class="faq-a-inner">Easy — just let us know. You can move from Starter to Website + Maintenance or add the Full Presence Package at any time. We'll prorate the difference and get you set up right away.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              <span>How do I get started?</span>
+              <span class="faq-ico"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Simple — fill out the quick form on this page. We'll build your free preview and reach out within 24 hours to walk you through it on a quick call. No cost, no commitment, no pressure.</div>
             </div>
           </div>
         </div>
@@ -2235,88 +2288,48 @@
     <section class="contact" id="contact">
       <div class="container">
         <div class="section-head-center reveal">
-          <span class="section-label">Get Started</span>
-          <h2 class="section-heading">Get Your <span class="accent">Free Website Audit</span> — No Commitment Required</h2>
-          <p class="section-subheading">We'll analyze your website, Google presence, and top competitors, then send you a full breakdown within 24 hours. Completely free.</p>
+          <span class="section-label">Free Preview</span>
+          <h2 class="section-heading">Ready to Start <span class="accent">Getting Found?</span></h2>
+          <p class="section-subheading">Tell us about your business and we'll build a free custom website preview for you — before we even get on a call.</p>
         </div>
 
-        <div class="contact-grid">
-          <div class="book-card reveal">
-            <div class="cal-ico"><i class="fa-solid fa-calendar"></i></div>
-            <h3>Prefer to Talk First?</h3>
-            <p>Book a free 30-minute call and we'll walk through your online presence together live. No pressure, no pitch — just honest advice.</p>
-            <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Book Your Free Call <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="contact-line">
-              <a href="tel:+15202765751"><i class="fa-solid fa-phone"></i> (520) 276-5751</a>
-              <a href="mailto:contact.thomasmarketing@gmail.com"><i class="fa-solid fa-envelope"></i> contact.thomasmarketing@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="form-card reveal" id="audit-form">
-            <h3>Request Your Free Audit</h3>
-            <p class="form-sub">Fill out the form below and we'll be in touch within 24 hours.</p>
+        <div class="contact-grid contact-grid-single">
+          <div class="form-card reveal" id="preview-form">
+            <h3>Get Your Free Website Preview</h3>
+            <p class="form-sub">Just 3 quick details. We'll build your preview and reach out within 24 hours.</p>
 
             <div class="form-error" id="formError" role="alert">
               <i class="fa-solid fa-circle-exclamation"></i>
               <span>Something went wrong. Please try again or call us directly at (520) 276-5751.</span>
             </div>
 
-            <form id="auditForm" novalidate>
-              <div class="form-grid-2">
-                <div class="form-row">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="John Smith" required />
-                </div>
-                <div class="form-row">
-                  <label for="businessName">Business Name</label>
-                  <input type="text" id="businessName" name="businessName" placeholder="Smith Plumbing Co." required />
-                </div>
+            <form id="previewForm" novalidate>
+              <div class="form-row">
+                <label for="businessName">Business Name</label>
+                <input type="text" id="businessName" name="businessName" placeholder="e.g. Smith's HVAC" required />
               </div>
               <div class="form-row">
-                <label for="industry">Industry / Business Type</label>
-                <input type="text" id="industry" name="industry" placeholder="Plumbing, HVAC, Salon..." required />
+                <label for="industry">Industry / Type of Business</label>
+                <input type="text" id="industry" name="industry" placeholder="e.g. HVAC, Plumber, Electrician" required />
               </div>
               <div class="form-row">
-                <label for="website">Website URL <span class="optional">(optional)</span></label>
-                <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
-              </div>
-              <div class="form-grid-2">
-                <div class="form-row">
-                  <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
-                </div>
-                <div class="form-row">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="john@yourbusiness.com" required />
-                </div>
-              </div>
-              <div class="form-row">
-                <label for="source">How did you hear about us?</label>
-                <select id="source" name="source" required>
-                  <option value="">Select one</option>
-                  <option value="Google Search">Google Search</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Referral">Referral</option>
-                  <option value="Cold Call">Cold Call</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <label for="message">Anything specific you'd like us to look at? <span class="optional">(optional)</span></label>
-                <textarea id="message" name="message" rows="3" placeholder="Feel free to share any concerns about your current online presence..."></textarea>
+                <label for="contact">Phone Number or Email</label>
+                <input type="text" id="contact" name="contact" placeholder="Best way to reach you" required />
               </div>
 
-              <button type="submit" class="submit-btn" id="submitBtn">Send Me My Free Audit <i class="fa-solid fa-arrow-right"></i></button>
+              <button type="submit" class="submit-btn" id="submitBtn">Build My Free Preview <i class="fa-solid fa-arrow-right"></i></button>
 
               <p class="form-footnote"><i class="fa-solid fa-shield-halved"></i> Your info stays private. We never share or sell your data.</p>
             </form>
 
             <div class="form-success" id="formSuccess">
               <div class="check-ico"><i class="fa-solid fa-circle-check"></i></div>
-              <h3>You're All Set!</h3>
-              <p>We'll have your personalized audit ready within 24 hours and reach out to you directly. Keep an eye on your inbox.</p>
-              <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">Book a Call While You Wait <i class="fa-solid fa-arrow-right"></i></a>
+              <h3>We're on it!</h3>
+              <p>We'll build your free preview and reach out within 24 hours to walk you through it together.</p>
+              <a href="https://calendly.com/thomasmarketingco/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">Want to skip ahead? Book your call now <i class="fa-solid fa-arrow-right"></i></a>
             </div>
+
+            <p class="form-direct">Prefer to reach out directly? Email us at <a href="mailto:contact.thomasmarketing@gmail.com">contact.thomasmarketing@gmail.com</a></p>
           </div>
         </div>
       </div>
@@ -2340,7 +2353,7 @@
             <li><a href="#how">How It Works</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#audit-form">Get Your Free Audit</a></li>
+            <li><a href="#contact">Get Your Free Website Preview</a></li>
           </ul>
         </div>
 
@@ -2527,9 +2540,9 @@
     });
 
     // =========================================================
-    // Audit form submission
+    // Preview intake form submission
     // =========================================================
-    const form = document.getElementById('auditForm');
+    const form = document.getElementById('previewForm');
     const submitBtn = document.getElementById('submitBtn');
     const formError = document.getElementById('formError');
     const formSuccess = document.getElementById('formSuccess');
@@ -2545,14 +2558,9 @@
       }
 
       const formData = {
-        name: form.name.value.trim(),
         businessName: form.businessName.value.trim(),
         industry: form.industry.value.trim(),
-        website: form.website.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        source: form.source.value,
-        message: form.message.value.trim()
+        contact: form.contact.value.trim()
       };
 
       const originalHTML = submitBtn.innerHTML;
@@ -2571,7 +2579,8 @@
 
         if (res.ok) {
           form.style.display = 'none';
-          document.querySelector('.form-card .form-sub').style.display = 'none';
+          const formSub = document.querySelector('.form-card .form-sub');
+          if (formSub) formSub.style.display = 'none';
           formSuccess.classList.add('show');
         } else {
           throw new Error('Request failed');
