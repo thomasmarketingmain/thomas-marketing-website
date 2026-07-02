@@ -6,7 +6,7 @@
   <title>Thomas Marketing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -43,59 +43,26 @@
     }
 
     .logo-monogram {
-      width: 36px;
-      height: 36px;
-      background: var(--ink);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-flex;
+      align-items: flex-start;
       flex-shrink: 0;
-      transition: transform 0.1s;
-      position: relative;
-      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
     }
 
-    .logo-monogram span {
-      color: #ffffff;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      position: relative;
-      z-index: 1;
+    .logo-bracket {
+      font-size: 2rem;
+      line-height: 0.82;
+      color: var(--ink);
     }
 
-    /* Logo glitch on hover */
-    .logo-mark:hover .logo-monogram::before,
-    .logo-mark:hover .logo-monogram::after {
-      content: 'TM';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: #ffffff;
-      animation: glitch-logo 0.4s steps(1) forwards;
-    }
-
-    .logo-mark:hover .logo-monogram::before {
-      color: rgba(255,50,50,0.8);
-      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    }
-
-    .logo-mark:hover .logo-monogram::after {
-      color: rgba(50,50,255,0.8);
-      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-    }
-
-    @keyframes glitch-logo {
-      0%   { transform: translate(-50%, -50%) translateX(0); }
-      20%  { transform: translate(-50%, -50%) translateX(-3px); }
-      40%  { transform: translate(-50%, -50%) translateX(3px); }
-      60%  { transform: translate(-50%, -50%) translateX(-2px); }
-      80%  { transform: translate(-50%, -50%) translateX(2px); }
-      100% { transform: translate(-50%, -50%) translateX(0); opacity: 0; }
+    .logo-monogram span:not(.logo-bracket) {
+      font-size: 0.87rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      padding: 0 0.7em;
+      line-height: 1;
+      margin-top: 0;
     }
 
     .logo-wordmark {
@@ -663,8 +630,7 @@
   <!-- NAV -->
   <nav>
     <a href="/" class="logo-mark" id="logo">
-      <div class="logo-monogram"><span>TM</span></div>
-      <span class="logo-wordmark">Thomas Marketing</span>
+      <div class="logo-monogram"><span class="logo-bracket">[</span><span>TM</span><span class="logo-bracket">]</span></div>
     </a>
     <a href="#contact" class="nav-cta">Work with us</a>
   </nav>
@@ -808,7 +774,7 @@
   <footer>
     <div class="footer-left">
       <a href="/" class="logo-mark">
-        <div class="logo-monogram"><span>TM</span></div>
+        <div class="logo-monogram"><span class="logo-bracket">[</span><span>TM</span><span class="logo-bracket">]</span></div>
       </a>
       <span class="footer-copy">&copy; 2026 Thomas Marketing</span>
     </div>
